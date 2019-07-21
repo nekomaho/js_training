@@ -23,3 +23,15 @@ console.log(hoge_hash.x);
 console.log(hoge_hash['y']);
 console.log(hoge_hash.z);
 console.log(hoge_hash.b);
+
+let hugahuga = [1,2,3,4]
+let [one, two, three, four] = hugahuga;
+console.log(one);
+console.log(two);
+console.log(three);
+console.log(four);
+
+let {x:first, y, z} = hoge_hash;
+console.log(first);
+console.log(y);
+console.log(z);
