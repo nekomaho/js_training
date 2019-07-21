@@ -17,3 +17,9 @@ console.log(animal[0]);
 
 let second_animal = ['猫',['犬'],'豚'];
 console.log(animal[1][0]);
+
+let hoge_hash = {x:1, y:2, z:3}
+console.log(hoge_hash.x);
+console.log(hoge_hash['y']);
+console.log(hoge_hash.z);
+console.log(hoge_hash.b);
