@@ -1,0 +1,7 @@
+console.group('上位グループ');
+for(let i = 0; i < 5; i++){
+    console.group('下位グループ' + i);
+    for(let j = 0; j < 3; j++){
+        console.log('ほげ');
+    }
+}
