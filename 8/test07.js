@@ -13,9 +13,15 @@ function asyncProcess(value) {
 asyncProcess('とくじろう').then(
     response => {
         console.log(response);
+        return asyncProcess('サブロウ');
+    }
+).then(
+    response => {
+        console.log(response);
     },
     error => {
-        console.log(`エラー：${error}`);
+        console.log(`エラー ${error}`);
     }
 );
+
 console.log('ほげ');
