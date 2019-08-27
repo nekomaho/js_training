@@ -18,3 +18,4 @@ asyncProcess('とくじろう').then(
         console.log(`エラー：${error}`);
     }
 );
+console.log('ほげ');
