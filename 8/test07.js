@@ -25,3 +25,29 @@ asyncProcess('とくじろう').then(
 );
 
 console.log('ほげ');
+
+Promise.all([
+    asyncProcess('ほげ'),
+    asyncProcess('ふが'),
+    asyncProcess('にゃご'),
+]).then(
+    response => {
+        console.log(response);
+    },
+    error => {
+        console.log(`エラー：${error}`);
+    }
+);
+
+Promise.race([
+    asyncProcess('ほげ'),
+    asyncProcess('ふが'),
+    asyncProcess('にゃご'),
+]).then(
+    response => {
+        console.log(response);
+    },
+    error => {
+        console.log(`エラー：${error}`);
+    }
+);
