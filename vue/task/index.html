@@ -6,6 +6,14 @@
   </head>
   <body>
     <div id="app">
+      <label v-for="label in options">
+        <input type="radio"
+               v-model="current"
+               v-bind:value="label.value">{{ label.label }}
+      </label>
+      <div>
+        {{ computedTodos.length }}件見つかりました。
+      </div>
       <table>
         <thead>
           <tr>
@@ -16,11 +24,11 @@
           </tr>
         </thead>
         <tbody>
-          <tr v-for="item in todos" v-bind:key="item.id">
+          <tr v-for="item in computedTodos" v-bind:key="item.id">
             <th>{{ item.id }}</th>
             <td>{{ item.comment }}</td>
             <td class="status">
-              <button v-on:click="doChangeState(item)">{{ item.state }}</button>
+              <button v-on:click="doChangeState(item)">{{ labels[item.state] }}</button>
             </td>
             <td class="button">
               <button v-on:click="doRemove(item)">削除</button>

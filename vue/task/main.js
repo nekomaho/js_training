@@ -19,7 +19,13 @@ var todoStorage = {
 const app = new Vue({
   el: '#app',
   data: {
-    todos: []
+    todos: [],
+    options: [
+      { value: -1, label: 'すべて' },
+      { value: 0, label: '作業中' },
+      { value: 1, label: '完了' }
+    ],
+    current: -1
   },
   watch: {
     todos: {
@@ -29,6 +35,18 @@ const app = new Vue({
     },
     // ネストしているデータも監視出来る
     deep: true
+  },
+  computed: {
+    computedTodos: function(){
+      return this.todos.filter(function(el){
+        return this.current < 0 ? true : this.current === el.state
+      }, this)
+    },
+    labels() {
+      return this.options.reduce(function(a, b){
+        return Object.assign(a, { [b.value]: b.label })
+      }, {})
+    }
   },
   methods: {
     doAdd: function(event, value){
