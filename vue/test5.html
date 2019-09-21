@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>My first Vue app</title>
+        <script src="https://unpkg.com/vue"></script>
+  </head>
+  <body>
+    <div id="app">
+      <p> {{ message }}</p>
+      <button v-on:click="clickMessage">ここをクリック</button>
+    </div>
+
+    <script>
+      var app = new Vue({
+        el: '#app',
+        data: {
+          message: 'OFF'
+        },
+        methods: {
+          clickMessage: function(){
+            if(this.message === 'ON') {
+              this.message = 'OFF'
+            } else {
+              this.message = 'ON'
+            }
+          }
+        }
+      })
+    </script>
+  </body>
+</html>

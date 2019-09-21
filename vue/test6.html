@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>My first Vue app</title>
+        <script src="https://unpkg.com/vue"></script>
+  </head>
+  <body>
+    <div id="app">
+      <p> {{ message }}<p>
+      <input v-model="message">
+    </div>
+
+    <script>
+      app = new Vue({
+        el: '#app',
+        data: {
+          message: '秘密の質問'
+        }
+      })
+   </script>
+  </body>
+</html>
